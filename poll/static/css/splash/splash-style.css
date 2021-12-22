@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+.splash-main{
+    position: relative;
+    height:100vh;
+}
+.splash-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.leftside-content {
+    background: var(--theme-green-color);
+    color: #ffffff;
+    width: 50%;
+    padding: 4.2rem 2rem;
+}
+.youonline-lg {
+    font-size: 4rem;
+    margin-top: 3.6rem;
+    font-weight: bold;
+    font-family: 'Inter',
+    sans-serif;
+}
+.splash-tagline{
+    font-weight: bold;
+    font-family: 'Inter',
+    sans-serif;
+    margin-top: 1rem;
+}
+.splash-left-box{
+    width: 90%;
+    margin: 0 auto;
+}
+.connect-with-youonline{
+    width: 370px;
+    margin: 1.5rem 0rem;
+}
+.connect-with-box{
+    width: 100%;
+    text-align: center;
+}
+
+.rightside-content{
+    width: 50%;
+    padding: 0rem 2rem;
+    background: #ffffff;
+}
+.form-section{
+    width: 52%;
+    margin: 0 auto;
+    height: 100%;
+    text-align: center;
+    display: grid;
+    place-content: center;
+}
+.heading-lg {
+    font-size: 3.2rem;
+    color: #020202;
+    font-weight: bold;
+    font-family: 'Inter',
+    sans-serif;
+    letter-spacing: 0.018em;
+}
+.login-btn, .signup-btn {
+    width: 80%;
+    display: block;
+    margin: 1.5rem auto;
+    padding: 1.1em;
+    border: unset;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    font-family: 'Montserrat',
+    sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+.termandcondition-link {
+    color: var(--theme-green-color);
+}
+.form-section .heading-lg {
+    margin-bottom: 3rem;
+}
+.form-section .heading-md {
+    margin-bottom: 3rem;
+    font-weight: 600;
+    font-family: 'Inter',
+    sans-serif;
+}
+.splash-form-bottom-text {
+    margin-top: 3.5rem;
+    font-weight: 600;
+    font-family: 'Inter',
+    sans-serif;
+    color:#7A7A7A;
+    font-size: 1.2rem;
+}
+
+@media only screen and (max-width: 700px) {
+    .splash-content{
+        display: block;
+        text-align: center;
+    }
+    .youonline-lg {
+        font-size: 2.8rem;
+        margin-top: unset;
+    }
+    .heading-normal{
+        font-size: 1.4rem;
+    }
+    .connect-with-youonline{
+        width: 150px;
+    }
+    .leftside-content,
+    .rightside-content{
+        width: 100%;
+    }
+    .rightside-content{
+        background: var(--theme-green-color);
+    }
+    .form-section{
+        width: 100%;
+        display: block;
+    }
+    
+    .form-section .heading-lg,
+    .form-section .heading-md {
+        display: none;
+    }
+    .login-btn{
+        background: #5DEF04;
+        margin-top: unset;
+    }
+    .signup-btn{
+        margin-bottom: unset;
+    }
+    .termandcondition-link {
+        color: #5DEF04;
+    }
+    .splash-form-bottom-text{
+        color:#ffffff;
+        margin: 3rem 0rem;
+    }
+    .splash-main {
+        background: var(--theme-green-color);
+    }
+}
+/* ----------- iPad 1, 2, Mini and Air ----------- */
+
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+    .form-section{
+        width: 80%;
+    }
+}

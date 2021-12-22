@@ -1,0 +1,64 @@
+{% extends 'index.html' %} {% load static %} {% block content%}
+
+<div class="main-signup">
+  <div class="signup-wrapper">
+    <div class="signup-left-sidebar">
+      <div class="signup-content">
+        <img
+          src="{% static 'images/connect-with-youonline.png' %}"
+          alt=""
+          class="resposive-img"
+        />
+      </div>
+    </div>
+    <br /><br /><br />
+    <div class="signup-right-sidebar">
+      <div class="signup-content">
+        <div class="signup-form">
+          <br /><br /><br />
+          <form
+            class="mt-5"
+            action="{% url 'create-post' %}"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            {% csrf_token %}
+
+            <h2 class="heading-md">Create Post</h2>
+
+            <div class="form-input input-border">
+              <input
+                type="text"
+                class="login-form-input password-field"
+                placeholder="content"
+                name="content"
+              />
+            </div>
+
+            <label for="">Image</label>
+            <div class="form-input input-border">
+              <input
+                type="file"
+                class="login-form-input"
+                placeholder="image"
+                name="image"
+                multiple
+              />
+            </div>
+            <label for="">video</label>
+            <div class="form-input input-border">
+              <input type="file" class="login-form-input" name="video" />
+            </div>
+
+        
+
+            <div class="form-input">
+              <button class="ubtn btn-signup uprimary">CREATE POST</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

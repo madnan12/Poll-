@@ -1,0 +1,96 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content%}
+
+    <div class="main-signup mt-5">
+      <div class="signup-wrapper">
+        <div class="signup-left-sidebar">
+          <div class="signup-content">
+            <img
+              src="{% static 'images/connect-with-youonline.png' %}"
+              alt=""
+              class="resposive-img"
+            />
+          </div>
+        </div>
+        <br><br><br>
+        <div class="signup-right-sidebar mt-5">
+          <div class="signup-content">
+            <div class="signup-form mt-5">
+              <br><br><br>
+              <form class="mt-5" method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                
+                <h2>Signup</h2>
+                <br><br><br>
+                <h2 class="heading-md mt-5">Sign Up</h2>
+                <div class="form-input input-border">
+                {{form.first_name}}
+                </div>
+                <div class="form-input input-border">
+                  {{form.last_name}}
+                </div>
+                <div class="form-input input-border">
+                  {{form.username}}
+                  
+                </div>
+                <div class="form-input input-border">
+                  {{form.email}}
+                </div>
+                <div class="form-input input-border">
+                  {{form.password}}
+                </div>
+                <div class="form-input input-border">
+                  {{form.profile_image}}
+                </div>
+                <div class="form-input input-border">
+                  {{form.dob}}
+                </div>
+                <div class="form-input input-gender">
+                  <p>Gender</p>
+                  <label>
+                    
+                    
+                  </label>
+                  <label>
+                    {{form.gender}}
+                   
+                  </label>
+                </div>
+                <div class="form-input input-border">
+                  {{form.mobile_number}}
+                </div>
+                <div class="form-input">
+                  <button class="ubtn btn-signup uprimary">
+                    CREAT ACCOUNT
+                  </button>
+                </div>
+              </form>
+              <div class="signup-footer">
+                <a href="#">Already have an account?</a>
+                <a href="#">Goto Login Page</a>
+              </div>
+              <div class="signup-text">
+                <p>Or Sign Up using</p>
+              </div>
+              <div class="social-login">
+                <div class="ico-box google-color">
+                  <i class="fab fa-google-plus-g"></i>
+                </div>
+                <div class="ico-box facebook-color">
+                  <i class="fab fa-facebook-f"></i>
+                </div>
+                <div class="ico-box linkedin-color">
+                  <i class="fab fa-linkedin-in"></i>
+                </div>
+                <div class="ico-box twitter-color">
+                  <i class="fab fa-twitter"></i>
+                </div>
+                <div class="ico-box vk-color"><i class="fab fa-vk"></i></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,28 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content%}
+
+<div class="container">
+
+    
+<div class="row">
+    {% for img in compressimage %}
+    <div class="col-sm-4">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><img src="{{img.uploadedImage.url}}" alt="" style="width: 330px; height: 200px;"></h5>
+          <p class="card-text"><h3>{{img.nameImage}}</h3></p>
+          <br>
+          <a href="{% url 'upload-image'%}" class="btn btn-success">compress new photo</a>
+          <a href="{% url 'delete-compress-photo' img.id%}" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  
+</div>
+
+
+
+{% endblock %}

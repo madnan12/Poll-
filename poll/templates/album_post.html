@@ -1,0 +1,67 @@
+{% extends 'index.html' %} {% load static %} {% block content%}
+<br /><br /><br />
+
+<div class="main-login">
+  <div class="login-wrapper">
+    <div class="login-left-sidebar">
+      <div class="login-content">
+        <img
+          src="{% static 'images/connect-with-youonline.png' %}"
+          alt=""
+          class="resposive-img"
+        />
+      </div>
+    </div>
+    <div class="login-right-sidebar">
+      <div class="login-content">
+        <div class="login-form">
+          <h2 class="heading-md">Create Album</h2>
+          <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            <label for="">Image</label>
+            <div class="form-input input-border">
+              <input
+                type="file"
+                class="login-form-input"
+                placeholder="image"
+                name="album_image"
+                multiple
+              />
+            </div>
+            <label for="">video</label>
+            <div class="form-input input-border">
+              <input
+                type="file"
+                class="login-form-input"
+                name="album_video"
+              />
+            </div>
+            <div class="form-input input-border">
+              <input
+                type="text"
+                class="login-form-input password-field"
+                placeholder="content"
+                name="content"
+              />
+            </div>
+
+            <div class="form-input input-border">
+              <input
+                type="text"
+                class="login-form-input password-field"
+                placeholder="album name"
+                name="name"
+              />
+            </div>
+            <div class="form-input">
+              <button class="ubtn btn-login uprimary">CREATE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

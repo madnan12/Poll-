@@ -1,0 +1,80 @@
+@charset "UTF-8";
+:root{
+    font-size:62.5%;
+    --theme-green-color:#2AD234;
+    --theme-text-color: #7A7A7A;
+    --theme-heading-color: #020202;
+}
+@font-face {
+    font-family: 'Avenir';
+    src: url("../fonts/AvenirFont/AvenirLTStd-Book.otf") format("opentype");
+    font-style: normal;
+}
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+body,
+p,
+ul,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    padding: 0;
+}
+
+a,
+a:hover,
+a:focus {
+    text-decoration: none;
+}
+
+button:focus,
+input:focus,
+a:focus {
+    outline: 0px;
+}
+body{
+    font-size: 1.4rem;
+    font-family: 'Avenir',
+    sans-serif;
+    font-weight: normal;
+    color: var(--theme-text-color);
+    letter-spacing: 0.0075em;
+}
+
+/* General classes */
+.resposive-img{
+    max-width: 100%;
+    height: auto;
+}
+.heading-normal {
+    font-size: 2rem;
+    font-weight: 800;
+    letter-spacing: 0.018em;
+}
+.ubtn{
+    border:unset;
+}
+.uprimary{
+    background: var(--theme-green-color);
+    color: #ffffff;
+}
+.udefault{
+    background: #F6F3F3;
+    color: rgba(12, 8, 8, 0.5);
+}
+.heading-md {
+    font-size: 2rem;
+    color: #020202;
+}

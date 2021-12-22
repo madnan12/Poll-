@@ -1,0 +1,308 @@
+{% load static %}
+<!DOCTYPE html>
+
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
+    <meta name="title" content="Youonline">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="keywords" content="keywords">
+    <meta name="author" content="">
+    <title>Youonline</title>
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css"
+        integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/mainstyle.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/signup/signup.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/login/login.css' %}" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+</head>
+
+<body>
+
+    <div class="theme-container">
+        <div class="nav-container">
+            {% if user.is_authenticated %}
+            <nav class="main-nav-bar">
+                <div class="left-bar">
+                    <img src="{% static 'images/YouOnline.svg' %}" alt="YouOnline Logo" class="img-fluid logo" />
+                    <div class="nav-search">
+                        <i class="fas fa-search theme-font"></i>
+                        <input type="text" class="search-nav" />
+                    </div>
+                </div>
+                
+                <div class="right-bar">
+                   
+                    <div class="home-menu">
+                        <a href="/" class="nav-item" >
+                            <img src="{% static 'images/home-green.svg' %}" alt="home icon" class="nav-icon-home" >
+                            <span>Home</span>
+                        </a>
+                    </div>
+                    <div class="message-menu">
+                        <a href="{% url 'create-post' %}" class="nav-item">
+                            <img src="{% static 'images/messages.svg' %}" alt="home icon" class="nav-icon-message">
+                            <span>Post</span>
+                            
+                        </a>
+                    </div>
+                    <div class="message-menu">
+                        <a href="{% url 'album-all-post' %}" class="nav-item">
+                            <img src="{% static 'images/messages.svg' %}" alt="home icon" class="nav-icon-message">
+                            <span>Album</span>
+                            
+                        </a>
+                    </div>
+            
+                    <div class="friends-menu">
+                        <a href="{% url 'list'%}" class="nav-item">
+                            <img src="{% static 'images/freinds-dark.svg' %}" alt="home icon" class="nav-icon-friends">
+                            <span>Poll</span>
+                        </a>
+                    </div>
+                    <div class="profile-menu">
+                        <a href="#" class="nav-item">
+                    
+                            <img src="{{user.profile_image.url}}" alt="home icon" class="nav-profile-icon" >
+                          
+                            <span>{{user.username}}</span>
+                            <span class="setting-dropdown"><i class="fas fa-chevron-down"></i></span>
+                        </a>
+                    </div>
+                    <div class="profile-setting white-card">
+                        <div class="profile-setting-user">
+                            <img src="{{user.profile_image.url}}" alt="">
+                            <div>
+                                <p>{{user.username}}</p>
+                                <span>See Profile</span>
+                            </div>
+                        </div>
+                        <div class="setting-list">
+                            <div class="setting-links">
+                                <div>
+                                    <div class="setting-ico-circle">
+                                        <img src="{% static 'images/settings/dashboard 1.png' %}" alt="">
+                                    </div>
+                                    <span>Set Privacy</span>
+                                </div>
+                                <img src="{% static 'images/settings/right-angel.png' %}" alt="" class="setting-links-icon">
+                            </div>
+                            <div class="setting-links">
+                                <div>
+                                    <div class="setting-ico-circle">
+                                        <img src="{% static 'images/settings/help.png' %}" alt="">
+                                    </div>
+                                    <span>Help & Support</span>
+                                </div>
+                                <img src="{% static 'images/settings/right-angel.png' %}" alt="" class="setting-links-icon">
+                            </div>
+                            <div class="setting-links">
+                                <div>
+                                    <div class="setting-ico-circle">
+                                        <img src="images/settings/https.png" alt="">
+                                    </div>
+                                    <span>Manage Security</span>
+                                </div>
+                                <img src="images/settings/right-angel.png" alt="" class="setting-links-icon">
+                            </div>
+                            <a href="{% url 'password_change'%}">
+                            <div class="setting-links">
+                                
+                                <div>
+                                    
+                                    <div class="setting-ico-circle">
+                                        <img src="images/settings/settings.png" alt="">
+                                    </div>
+                                    <span>Change Password</span>
+                                    
+                                </div>
+                         
+                            </div>
+                        </div>
+                    </a>
+                       <a href="{% url 'logout'%}"><p class="sign-out">Sign Out</p></a> 
+                        <div class="setting-profile-footer">
+                            <span>Privacy  · Terms  · Advertising  · Ad Choices   · Cookies  ·   · Youonline © 2021</span>
+                        </div>
+                    </div>
+                   
+                </div>
+                
+            </nav>
+            {% else %}
+
+            <nav class="main-nav-bar mt-4">
+                
+                <div class="left-bar">
+                    <img src="{% static 'images/YouOnline.svg' %}" alt="YouOnline Logo" class="img-fluid logo" />
+                    <div class="nav-search">
+                        <i class="fas fa-search theme-font"></i>
+                        <input type="text" class="search-nav" />
+                    </div>
+                </div>
+            </nav>
+            {% endif %}
+        </div>
+    </div>
+
+
+
+
+    <!-- All POST -->
+
+    <div class="you-container">
+        <div class="row">
+            <div class="col">
+                {% for p in posts %}
+                <div class="home-wall wall-offset mx-auto">
+                    <div class="center-timeline">
+                        <div class="white-card wall-post">
+                            <div class="post-profile">
+                                <div class="post-profile-left">
+                                    {% if user.profile_image %}
+                                    <img src="{{user.profile_image.url}}" alt="">
+                                    {% else %}
+                                    <img src="{% static 'default.jpg'%}" alt="">
+                                    {% endif %}
+                                    <div>
+                                        <p>{{user.username}}</p>
+                                        <small>{{p.created_at}}</small>
+                                    </div>
+                                </div>
+                                <div class="post-ellipsis">
+                                    <i class="fas fa-ellipsis-h"></i>
+                                    
+                                    <a href="{% url 'delete-post' p.id%}">Delete</a>
+                                </div>
+                            </div>
+    
+                            <div class="post-content">
+    
+                                <p style="text-align: justify;">{{p.content}}</p>
+    
+                            </div>
+    
+                            {% for pm in postmedia %}
+    
+                            {% if pm.post.id == p.id %}
+    
+                            <div class="post-media">
+    
+                                {% if pm.image %}
+                                <img src="{{pm.image.url}}" alt="" class="img-fluid" />
+                                {% endif %}
+                                {% if pm.video %}
+                                <video src="{{pm.video.url}}" alt="" class="video-fluid" controls></video>
+                                {% endif %}
+                            </div>
+    
+                            {% endif %}
+                            {% endfor %}
+                            <div class="post-reacts">
+                                <img src="{% static 'images/Like-500px 1.svg' %}" alt="">
+                                <img src="{% static 'images/red-heart.svg' %}" alt="">
+                                <span>{{ p.like.all.count }}</span>
+                            </div>
+                            <form method="POST" action="{% url 'like' p.pk %}">
+                            <div class="post-comment-section">
+                                <div class="post-comment-react">
+                                    <div class="like-react">
+                                            {% csrf_token %}
+                                            <input type="hidden" name="next" value="{{ request.path }}">
+                                        <img src="{% static 'images/like 1.svg' %}" alt="">
+                                       <span>Like</span> 
+                                    </div>
+                                    <div class="reaction-emoji-box">
+                                        <button type="submit" style="border: none;">
+                                        <img src="{% static 'images/reaction emojis/like.gif' %}" alt="" class="img-fluid"></button>
+                                        <button type="submit" style="border: none;">
+                                        <img src="{% static 'images/reaction emojis/love.gif' %}" alt="" class="img-fluid"></button>
+                                        <button type="submit" style="border: none;">
+                                        <img src="{% static 'images/reaction emojis/haha.gif' %}" alt="" class="img-fluid"></button>
+                                        <button type="submit" style="border: none;">
+                                        <img src="{% static 'images/reaction emojis/wow.gif' %}" alt="" class="img-fluid"></button>
+                                        <button type="submit" style="border: none;">
+                                        <img src="{% static 'images/reaction emojis/sad.gif' %}" alt="" class="img-fluid"></button>
+                                        <button type="submit" style="border: none;">
+                                        <img src="{% static 'images/reaction emojis/angry.gif' %}" alt="" class="img-fluid"></button>
+                                    </div>
+                                </button>
+                                </form>
+                                    <div>
+                                        <a href="{% url 'single-post' p.id %}"><img src="{% static 'images/chat 1.svg' %}" alt="">
+                                        <span>Comment</span></a> 
+                                    </div>
+                                </div>
+                                <div>
+                                    Share
+                                </div>
+                            </div>
+                           
+    
+    
+                            {% for c in comments %}
+                            {% if c.post.id == p.id %}
+                            <div class="post-comments">
+                                
+                                <div>
+                                    {% if user.profile_image %}
+                                    <img src="{{user.profile_image.url}}" alt="">
+                                    {% else %}
+                                    <img src="{% static 'default.jpg'%}" alt="">
+                                    {% endif %}
+                                </div>
+                                <div class="wall-post-comment">
+                                    <div class="comment-details">
+                                        <p>{{user.username}}</p>
+                                        <div>
+                                            <span>{{c.created_at}} </span>
+                                            <i class="fas fa-ellipsis-v"></i>
+                                        </div>
+                                        <a href="{% url 'delete-comment' c.id%}">Delete</a>
+                                    </div>
+                      
+                                    <div>
+                                        <p>{{c.comment}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endfor %}
+                            <div class="comment-footer">
+                                <span>Like | Comment</span>
+                            </div>
+                        </div>
+    
+    
+    
+                    </div>
+                </div>
+                {% endfor %}
+    
+            </div>
+        </div>
+    </div>
+    
+    
+      
+
+
+
+
+    {% block content %}
+
+    {% endblock %}
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.6.0.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+</body>
+
+</html>

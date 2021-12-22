@@ -1,0 +1,62 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content%}
+
+
+
+    <div class="main-login">
+      <div class="login-wrapper">
+        <div class="login-left-sidebar">
+          <div class="login-content">
+            <img
+              src="{% static 'images/connect-with-youonline.png' %}"
+              alt=""
+              class="resposive-img"
+            />
+          </div>
+        </div>
+        <div class="login-right-sidebar">
+          <div class="login-content">
+            <div class="login-form">
+              <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+               
+                  <h2 class="heading-md">Sign in</h2>
+                <div class="form-input input-border">
+                  <input
+                    type="text"
+                    class="login-form-input"
+                    placeholder="Username"
+                    name="username"
+                  />
+                </div>
+                <div class="form-input input-border">
+                  <input
+                    type="password"
+                    class="login-form-input password-field"
+                    placeholder="Password"
+                    name="password"
+                  />
+                </div>
+                <div class="form-input">
+                  <button class="ubtn btn-login uprimary" type="submit">LOGIN</button>
+                </div>
+
+              </form>
+              <div class="login-footer">
+                <a href="{% url 'password_reset'%}">Forgot Password?</a>
+                <a href="#">Signup for YouOnline</a>
+              </div>
+              <div class="privacy-policy">
+                <p class="splash-form-bottom-text">
+                    By signing up, you agree to the
+                    <a href="#" class="termandcondition-link">
+                        Terms of Service </a> and <a href="#" class="termandcondition-link"> Privacy Policy,</a>  including <a href="#" class="termandcondition-link"> Cookie Use.</a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

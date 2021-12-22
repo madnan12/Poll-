@@ -1,0 +1,61 @@
+{% extends 'index.html' %}
+{% load static %}
+{% block content%}
+
+<div class="you-container">
+    <div class="row">
+        <div class="col">
+            <a href="{% url 'album-post' %}">Create album</a>
+            {% for p in albums %}
+            <div class="home-wall wall-offset mx-auto">
+                
+                <div class="center-timeline">
+                    <div class="white-card wall-post">
+                        <div class="post-profile">
+                            <div class="post-profile-left">
+                            
+                                <div>
+                                    <p><h3>Album Name: {{p.name}}</h3></p>
+                                    <small>Album created at: {{p.created_at}}</small>
+                                </div>
+                            </div>
+                            <div class="post-ellipsis">
+                                <i class="fas fa-ellipsis-h"></i>
+                                
+                                <a href="{% url 'delete-album-post' p.id%}">Delete</a>
+                            </div>
+                        </div>
+
+                        <div class="post-content">
+
+                            <p style="text-align: justify;"></p>
+
+                        </div>
+
+                        {% for pm in album_posts %}
+
+                        {% if pm.album.id == p.id %}
+
+                        <div class="post-media">
+
+                            {% if pm.album_image %}
+                            <img src="{{pm.album_image.url}}" alt="" class="img-fluid" />
+                            {% endif %}
+                            {% if pm.album_video %}
+                            <video src="{{pm.album_video.url}}" alt="" class="video-fluid" controls></video>
+                            {% endif %}
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
